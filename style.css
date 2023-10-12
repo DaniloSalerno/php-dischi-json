@@ -12,13 +12,32 @@ header {
     position: sticky;
     top: 0;
     left: 0;
+    height: 80px;
     z-index: 1000;
+    background-color: #06131f;
 }
 
 .card {
     background-color: #112030;
 }
 
+main {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
 .nav {
-    background-color: #06131f;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.overlay {
+    background-color: #1d2d3ce5;
+    position: absolute;
+    height: calc(100vh - 80px);
+    width: 100%;
+    z-index: 2;
+    overflow-y: hidden;
 }

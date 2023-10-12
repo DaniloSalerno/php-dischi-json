@@ -3,10 +3,17 @@ createApp({
     data() {
         return {
             albums: null,
+            current_album: null,
         }
     },
 
     methods: {
+        show_details(i) {
+
+            this.current_album = this.albums[i]
+
+            //console.log(this.current_album);
+        }
     },
     mounted() {
         axios

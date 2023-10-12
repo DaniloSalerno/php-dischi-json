@@ -19,19 +19,45 @@
     <div id="app">
 
         <header>
-            <div class="nav p-3">
+            <div class="nav">
                 <img height="60" src="./logo.svg" alt="logo">
             </div>
         </header>
 
         <main>
+
+            <div class="overlay d-flex justify-content-center align-items-center" v-if="current_album !== null">
+
+                <div class="text-white text-center w-25">
+
+                    <button class="btn btn-secondary mb-3" @click="current_album = null">
+                        X
+                    </button>
+
+                    <img width="200" :src="current_album.poster" class="card-img-top" :alt="current_album.title">
+
+                    <h5 class="fw-bold py-3">{{current_album.title}}</h5>
+
+                    <div>{{current_album.author}}</div>
+
+                    <div class="fw-bold py-3">{{current_album.year}}</div>
+
+                    <div class="fw-bold">Genre: {{current_album.genre}}</div>
+
+
+
+
+                </div>
+                <!-- /.card -->
+            </div>
+
             <div class="container">
 
                 <div class="row row-cols-3 g-5 mt-3">
 
                     <div class="col" v-for="(album, i) in albums" :key="i">
 
-                        <div class="card p-5 border-0 text-white">
+                        <div class="card p-5 border-0 text-white" @click="show_details(i)">
 
                             <img :src="album.poster" class="card-img-top" :alt="album.title">
 
