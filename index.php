@@ -14,60 +14,53 @@
 </head>
 
 <body>
-
-
     <div id="app">
 
-        <div id="app">
+        <header>
+            <nav class="navbar navbar-expand navbar-light bg-light shadow">
+                <div class="nav navbar-nav">
+                    <a class="nav-item nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Home</a>
+                </div>
+            </nav>
+        </header>
 
-            <header>
-                <nav class="navbar navbar-expand navbar-light bg-light shadow">
-                    <div class="nav navbar-nav">
-                        <a class="nav-item nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                        <a class="nav-item nav-link" href="#">Home</a>
-                    </div>
-                </nav>
-            </header>
+        <main>
+            <div class="container">
 
-            <main>
-                <div class="container">
+                <div class="row row-cols-3 g-5">
 
-                    <div class="row row-cols-3 g-5">
+                    <div class="col" v-for="(album, i) in albums" :key="i">
 
-                        <div class="col" v-for="(album, i) in albums" :key="i">
+                        <div class="card">
 
-                            <div class="card">
+                            <img :src="album.poster" class="card-img-top" :alt="album.title">
 
-                                <img :src="album.poster" class="card-img-top" :alt="album.title">
+                            <div class="card-body text-center">
 
-                                <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">{{album.title}}</h5>
 
-                                    <h5 class="card-title fw-bold">{{album.title}}</h5>
+                                <div class="card-subtitle text-muted ">{{album.author}}</div>
 
-                                    <div class="card-subtitle text-muted ">{{album.author}}</div>
-
-                                    <div class="card-text fw-bold">{{album.year}}</div>
-
-                                </div>
-                                <!-- /.card-body -->
+                                <div class="card-text fw-bold">{{album.year}}</div>
 
                             </div>
-                            <!-- /.card -->
+                            <!-- /.card-body -->
 
                         </div>
-                        <!-- /.col -->
+                        <!-- /.card -->
 
                     </div>
-                    <!-- /.row -->
+                    <!-- /.col -->
 
                 </div>
-                <!-- /.container -->
-            </main>
+                <!-- /.row -->
 
-        </div>
+            </div>
+            <!-- /.container -->
+        </main>
 
-
-    </div>
+    </div><!--  -->
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
