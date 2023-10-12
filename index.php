@@ -11,28 +11,27 @@
     <title>Albums</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div id="app">
 
         <header>
-            <nav class="navbar navbar-expand navbar-light bg-light shadow">
-                <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Home</a>
-                </div>
-            </nav>
+            <div class="nav p-3">
+                <img height="60" src="./logo.svg" alt="logo">
+            </div>
         </header>
 
         <main>
             <div class="container">
 
-                <div class="row row-cols-3 g-5">
+                <div class="row row-cols-3 g-5 mt-3">
 
                     <div class="col" v-for="(album, i) in albums" :key="i">
 
-                        <div class="card">
+                        <div class="card p-5 border-0 text-white">
 
                             <img :src="album.poster" class="card-img-top" :alt="album.title">
 
@@ -40,7 +39,7 @@
 
                                 <h5 class="card-title fw-bold">{{album.title}}</h5>
 
-                                <div class="card-subtitle text-muted ">{{album.author}}</div>
+                                <div class="card-subtitle">{{album.author}}</div>
 
                                 <div class="card-text fw-bold">{{album.year}}</div>
 
