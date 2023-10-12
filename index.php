@@ -16,6 +16,59 @@
 <body>
 
 
+    <div id="app">
+
+        <div id="app">
+
+            <header>
+                <nav class="navbar navbar-expand navbar-light bg-light shadow">
+                    <div class="nav navbar-nav">
+                        <a class="nav-item nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">Home</a>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <div class="container">
+
+                    <div class="row row-cols-3 g-5">
+
+                        <div class="col" v-for="(album, i) in albums" :key="i">
+
+                            <div class="card">
+
+                                <img :src="album.poster" class="card-img-top" :alt="album.title">
+
+                                <div class="card-body text-center">
+
+                                    <h5 class="card-title fw-bold">{{album.title}}</h5>
+
+                                    <div class="card-subtitle text-muted ">{{album.author}}</div>
+
+                                    <div class="card-text fw-bold">{{album.year}}</div>
+
+                                </div>
+                                <!-- /.card-body -->
+
+                            </div>
+                            <!-- /.card -->
+
+                        </div>
+                        <!-- /.col -->
+
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.container -->
+            </main>
+
+        </div>
+
+
+    </div>
+
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js" integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
